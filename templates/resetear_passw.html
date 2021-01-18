@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Olvido la Contraseña
+{% endblock title %}
+
+{% block content %}
+    <h1>Resetea tu clave</h1>
+    <br/>
+
+    <form action="" method="POST">
+        <label for="email">Email</label>
+        <input type="text"  name="email" />
+
+        <label for="password">Nueva Contraseña</label>
+        <input type="password" id="pwd" name="password" />
+
+        <input type="button" value="Enviar" name="Enviar" /> 
+
+
+    </form> 
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Información
+{% endblock title %}
+
+<div class="box">
+    {% block content %}
+        <img src="{{ url_for('static', filename='img/esta2.jpg') }}" />
+
+        <div id="proposito">
+
+            <p>
+                <h1>Esta aplicación esta diseñada para revolverlo que tu necesitas</h1><br/>
+                Arrendaste un apartamento sin estacionamiento?Dpto Parking es tu salvación!!! <br/>
+                Tienes estacionamiento y no lo utilizas?Dpto Parking es tu salvación!!! <br/>
+                Si eres visita basta de tramites engorrosos en la recepción.Dpto Parking es tu salvación!!! <br/>
+                Puedes buscar estacionamientos disponiblesdentro de tu sector o condominio de manera fácil y simple.Nuestra aplicación te ofrece estacionamiento disponible mas cerca mediante tu ubicación GPS y lo mejor de todo que puedes reservarlodirectamente con nuestra aplicación según sea tu necesidad por Hora – Día – Semana incluso el Mes.
+            </p>
+
+        </div>
+
+    {% endblock %}
+</div>
+
+    

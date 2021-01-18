@@ -1,0 +1,71 @@
+{% extends 'layout2.html' %}
+
+{% block title %}
+    Administrar estacionamientos
+{% endblock title %}
+
+{% block content %}
+
+    <h1>Administrar estacionamientos</h1>
+    <br/>
+    <h3>{{mensaje}}</h3>
+    <br/>
+    <h2>Estacionamientos Ingresados</h2>
+    <br/>
+
+    <table style="width:100%" id="tabla_esta">
+        <tr>
+        
+            <th>Número de estacionamiento</th>
+            <th>Piso del estacionamoiento</th>
+            <th>Tipo de estacionamiento</th>
+        </tr>
+    {% for resultado in resultado_estacionamiento %}
+  
+        <tr>
+            
+            <td>{{resultado[1]}}</td>
+            <td>{{resultado[2]}}</td>
+            <td>
+                {% if resultado[3] == 1 %}
+                    <p>Administrador</p>
+
+                {% elif resultado[3] == 2 %}
+                    <p>Dueño</p>
+
+                {% elif resultado[3] == 3 %}
+                    <p>Visita</p>
+                {% endif %}
+                
+            </td>
+        </tr>
+
+    {% endfor %}
+    </table>
+    <br/>
+    <h2>Ingresa nuevos datos de estacionamiento</h2>
+    
+    <h3>{{error}}</h3>
+    <br/>
+    <form action="" method="POST">
+
+        <label for="num_estacionamiento">Número de puesto de estacionamiento</label>
+        <input type="text" name="num_estacionamiento"/>
+
+        <label for="piso_estacionamiento">Piso del puesto de estacionamiento</label>
+        <input type="text"  name="piso_estacionamiento"/>
+
+        <label for="tipo_estacionamiento">Selecciona el tipo de estacionamiento</label>
+        <select name="tipo_estacionamiento" id="tipo_estacionamiento">
+            <option value="-1">Seleccione</option>
+            <option value="1">Administrador</option>
+            <option value="2">Dueño</option>
+            <option value="3">Visita</option>
+        </select>
+
+        <br/>
+        <br/>
+
+        <input type="submit" value="Ingresar estacionamiento" name="ingresar_esta" /> 
+
+{% endblock %}

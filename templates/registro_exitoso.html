@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Registro
+{% endblock title %}
+
+<div class="box">
+    {% block content %}
+        <img src="{{ url_for('static', filename='img/esta2.jpg') }}" />
+
+        <div id="proposito">
+
+            <p>
+                <h1>
+                    ¡¡Tu registro ha sido exitoso!!
+                </h1>
+            </p>
+
+        </div>
+
+        <label for="ingresar">¿Quieres Ingresar?</label>
+        
+       <a href="{{ url_for('ingresar')}}">Pincha Aqui!!</a>
+
+    {% endblock %}
+</div>

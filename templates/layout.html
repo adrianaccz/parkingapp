@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+            {% endblock  %} | Parking App
+        </title>
+
+        <!--Cargar hoja de estilo-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    </head>
+    <body>
+
+        <header>
+            <div id="logotipo">
+                <!--Logo flask-->
+                <img src="{{ url_for('static', filename='img/logo.png') }}" />
+                <h1>Parking APP</h1>
+            </div>
+        </header>
+
+        <nav>
+
+            
+            <ul>
+                <li>
+                    <a href="{{ url_for('index')}}">Pagina principal</a>
+                </li>
+            
+                <li>
+                    <a href="{{ url_for('quienesSomos')}}">Quienes somos</a>
+                </li>
+                
+                <li>
+                    <a href="{{ url_for('soyAdministrador')}}">Soy Administrador</a>
+                </li>
+                
+                <li>
+                    <a href="{{ url_for('soyDueño')}}">Soy Dueño</a>
+                </li>
+                
+                <li>
+                    <a href="{{ url_for('soyVisitante')}}">Soy Visita</a>
+                </li>
+                
+                <li>
+                    <a href="{{ url_for('contacto')}}">Contacto</a>
+                </li>
+            
+                <li>
+                    <a href="{{ url_for('ingresar')}}">Ingresar</a>
+                </li>
+                
+                <li>
+                    <a href="{{ url_for('registrate')}}">Registrate</a>
+                </li>
+            </ul>
+            
+        </nav>
+
+        <div class="barra">
+            <span class="esquina-izquierda"></span>
+            <span class="relleno-barra"></span>
+            <span class="esquina-derecha"></span>
+        </div>
+
+        <div id="content">
+
+        <div class="box">
+            {% block content %}
+                <!--Codigo que viene de los TEMPLATES-->
+                
+            {% endblock %}
+        </div>
+
+        <!--Pie de pagina-->
+        <footer>
+            PARKING APP &copy; | DICORD - {{now.month}} / {{now.year}}
+        </footer>
+        
+    </body>
+</html>
+
+
+
+

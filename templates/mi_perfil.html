@@ -1,0 +1,45 @@
+{% extends 'layout2.html' %}
+
+{% block title %}
+    Mi perfil
+{% endblock title %}
+
+{% block content %}
+
+    <h1>Perfil de: {{session['nombre']}} {{session['apellidos']}}</h1>
+    <br/>
+    <h2>{{mensaje}}</h2>
+    <h2>{{error}}</h2>
+    <br/>
+    <h2>Actualizar datos:</h2>
+    <form action="" method="POST">
+
+        <label for="nombre">Nombre</label>
+        <input type="text"  name="nombre" value={{resultado[1]}} />
+
+        <label for="apellidos">Apellidos</label>
+        <input type="text"  name="apellidos" value={{resultado[2]}} />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value={{resultado[3]}} />
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" value={{resultado[6]}} />
+
+        <label for="telefono">Teléfono</label>
+        <input type="text" id="telefono" name="telefono" value={{resultado[5]}} />
+
+        <label for="perfiles">Selecciona tu perfil</label>
+        <select name="perfil" id="perfil">
+            <option value="-1">Seleccione</option>
+            <option value="1">Administrador</option>
+            <option value="2">Dueño</option>
+            <option value="3">Visita</option>
+        </select>
+
+        <br/>
+        <br/>
+
+        <input type="submit" value="Guardar cambios" name="registrate" /> 
+
+{% endblock %}

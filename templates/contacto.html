@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Contacto
+{% endblock title %}
+
+{% block content %}
+    <h1>Contactate con nosostros</h1>
+
+    <br/>
+    {{error}}
+    <br/>
+    <br/>
+
+    <form action="" method="POST">
+        <label for="nombre">Nombre</label>
+        <input type="text"  name="nombre" />
+
+        <label for="apellidos">Apellidos</label>
+        <input type="text"  name="apellidos" />
+
+        <label for="email">Email</label>
+        <input type="text"  name="email" />
+
+        <label for="cuentanos">¿Qué necesitas?</label>
+        <textarea type="text" rows="10" cols="75" name="cuentanos"></textarea>
+        <input type="submit" values="Enviar" /> 
+
+    </form> 
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Contacto
+{% endblock title %}
+
+<div class="box">
+    {% block content %}
+        <img src="{{ url_for('static', filename='img/esta2.jpg') }}" />
+
+        <div id="proposito">
+
+            <p>
+                <h1>
+                    ¡¡Tu mensaje ha sido enviado exitosamente!!
+                </h1>
+            </p>
+
+        </div>
+
+    {% endblock %}
+</div>

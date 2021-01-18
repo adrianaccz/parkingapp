@@ -1,0 +1,47 @@
+{% extends 'layout2.html' %}
+
+{% block title %}
+    Inicio
+{% endblock title %}
+
+{% block content %}
+
+    <form action="" method="POST">
+        
+        <h1>Bienvenid@ {{session['nombre']}} {{session['apellidos']}}</h1>
+        <br/>
+        <br/>
+        <h2>Asigna Estacionamiento</h2>
+        <br/>
+        <h3>{{mensaje}}</h3>
+        <br/>
+        <label for="usuarios">Selecciona el usuario</label>
+            <select name="usuarios" id="usuarios">
+                <option value="-1">Seleccione</option>
+                {% for resultado in resultados %}
+                    
+                    <option value="{{resultado[0]}}">{{resultado[1]}} {{resultado[2]}}</option>
+            
+            {% endfor %}
+        </select>
+        <br/>
+        <br/>
+
+    <label for="estacionamientos">Selecciona el estacionamiento</label>
+        <select name="estacionamientos" id="estacionamientos">
+            <option value="-1">Seleccione</option>
+            {% for resultado in resultados2 %}
+                
+                <option value="{{resultado[0]}}">{{resultado[1]}}</option>
+            
+            {% endfor %}
+        
+        </select>
+
+        <br/>
+        <br/>
+
+        <input type="submit" value="Asignar estacionamiento" name="asigna_esta" /> 
+
+    </form>
+{% endblock %}
