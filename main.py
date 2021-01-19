@@ -11,7 +11,6 @@ import re
 
 app = Flask(__name__)
 
-app.secret_key = 'adriana'
 
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
